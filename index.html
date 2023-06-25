@@ -39,12 +39,30 @@
     }
 
     /* Set up layout */
+    .bigger-container {
+      display: flex;
+    }
+
     .container {
+      flex: 1;
       max-width: 600px;
-      margin: 20px auto; /* Adds space on top and bottom, and centers the container horizontally */
+      margin: 20px; /* Adds space on all sides */
+      padding: 0 20px;
+      border: 2px solid var (--gradient-light-royal-blue);
+      border-radius: 8px;
+      background-color: var(--gradient-light-slate-blue);
+    }
+
+    .container-summary {
+      flex: 1;
+      max-width: 600px;
+      margin: 20px;
       padding: 0 20px;
       border: 2px solid var(--neutral-dark-gray-blue);
       border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
     }
 
     /* Set up component styles */
@@ -57,18 +75,20 @@
       font-size: 48px;
       color: var(--primary-cobalt-blue);
       margin-bottom: 16px;
+      font-weight: 700;
     }
 
     .score-label {
       font-size: 24px;
       color: var(--neutral-dark-gray-blue);
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
     .description {
       font-size: 18px;
       color: var(--neutral-dark-gray-blue);
       margin-bottom: 40px;
+      line-height: 1.4;
     }
 
     .summary-item {
@@ -76,6 +96,13 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
+      padding: 10px;
+      background-color: var(--neutral-pale-blue);
+      border-radius: 8px;
+    }
+
+    .container-summary-description {
+      text-align: left;
     }
 
     .summary-item-label {
@@ -90,7 +117,10 @@
     }
 
     .continue-button {
-      display: inline-block;
+      display: block;
+      margin: 0 auto; /* Center horizontally */
+      text-align: center; /* Center the text */
+      white-space: nowrap; /* Prevent line wrapping */
       padding: 12px 24px;
       background-color: var(--primary-cobalt-blue);
       color: var(--neutral-white);
@@ -118,11 +148,17 @@
     /* Media Queries */
     @media (max-width: 767px) {
       /* Mobile styles */
-      .container {
+      .bigger-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .container, {
         max-width: 85%; /* Adjusts the max-width to fit the full width of the viewport */
         margin: 10px auto; /* Adjusts the margin for mobile devices */
         padding: 0 10px;
       }
+
       .score {
         font-size: 36px;
       }
@@ -157,11 +193,16 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="result-container">
-      <div class="score">76</div>
-      <div class="score-label">of 100</div>
-      <div class="description">Great! You scored higher than 65% of the people who have taken these tests.</div>
+  <div class="bigger-container">
+    <div class="container">
+      <div class="result-container">
+        <div class="score">76</div>
+        <div class="score-label">of 100</div>
+        <div class="description">Great! You scored higher than 65% of the people who have taken these tests.</div>
+      </div>
+    </div>
+    <div class="container-summary">
+      <h2 class="container-summary-description">Summary</h2>
       <div class="summary-item">
         <div class="summary-item-label">Reaction</div>
         <div class="summary-item-value">80 / 100</div>
@@ -180,10 +221,10 @@
       </div>
       <a class="continue-button" href="#">Continue</a>
     </div>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
 </html>

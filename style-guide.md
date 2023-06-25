@@ -9,7 +9,8 @@ The designs were created to the following widths:
 
 ## Colors
 
-### Primary
+### Primary 
+    for summary-item-label and summary-item-value
 
 - Light red: hsl(0, 100%, 67%)
 - Orangey yellow: hsl(39, 100%, 56%)
@@ -17,7 +18,7 @@ The designs were created to the following widths:
 - Cobalt blue: hsl(234, 85%, 45%)
 
 ## Gradients
-
+    for container result-container or container
 - Light slate blue (background): hsl(252, 100%, 67%)
 - Light royal blue (background): hsl(241, 81%, 54%)
 
