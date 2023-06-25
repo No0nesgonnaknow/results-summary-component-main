@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Results summary component</title>
+  <style>
+    /* Reset default margin and padding */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Set up typography */
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    /* Set up colors */
+    :root {
+      --primary-light-red: hsl(0, 100%, 67%);
+      --primary-orangey-yellow: hsl(39, 100%, 56%);
+      --primary-green-teal: hsl(166, 100%, 37%);
+      --primary-cobalt-blue: hsl(234, 85%, 45%);
+
+      --gradient-light-slate-blue: hsl(252, 100%, 67%);
+      --gradient-light-royal-blue: hsl(241, 81%, 54%);
+
+      --circle-violet-blue: hsla(256, 72%, 46%, 1);
+      --circle-persian-blue: hsla(241, 72%, 46%, 0);
+
+      --neutral-white: hsl(0, 0%, 100%);
+      --neutral-pale-blue: hsl(221, 100%, 96%);
+      --neutral-light-lavender: hsl(241, 100%, 89%);
+      --neutral-dark-gray-blue: hsl(224, 30%, 27%);
+    }
+
+    /* Set up layout */
+    .container {
+      max-width: 600px;
+      margin: 20px auto; /* Adds space on top and bottom, and centers the container horizontally */
+      padding: 0 20px;
+      border: 2px solid var(--neutral-dark-gray-blue);
+      border-radius: 8px;
+    }
+
+    /* Set up component styles */
+    .result-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .score {
+      font-size: 48px;
+      color: var(--primary-cobalt-blue);
+      margin-bottom: 16px;
+    }
+
+    .score-label {
+      font-size: 24px;
+      color: var(--neutral-dark-gray-blue);
+      margin-bottom: 40px;
+    }
+
+    .description {
+      font-size: 18px;
+      color: var(--neutral-dark-gray-blue);
+      margin-bottom: 40px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .summary-item-label {
+      font-size: 18px;
+      color: var(--neutral-dark-gray-blue);
+    }
+
+    .summary-item-value {
+      font-size: 24px;
+      color: var(--primary-green-teal);
+      font-weight: 700;
+    }
+
+    .continue-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--primary-cobalt-blue);
+      color: var(--neutral-white);
+      font-size: 18px;
+      font-weight: 800;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 40px;
+    }
+
+    .continue-button:hover {
+      background-color: var(--primary-orangey-yellow);
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .attribution a {
+      color: var(--neutral-dark-gray-blue);
+    }
+
+    /* Media Queries */
+    @media (max-width: 767px) {
+      /* Mobile styles */
+      .container {
+        max-width: 85%; /* Adjusts the max-width to fit the full width of the viewport */
+        margin: 10px auto; /* Adjusts the margin for mobile devices */
+        padding: 0 10px;
+      }
+      .score {
+        font-size: 36px;
+      }
+
+      .score-label {
+        font-size: 20px;
+      }
+
+      .description {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .summary-item {
+        flex-direction: column;
+      }
+
+      .summary-item-label {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      .summary-item-value {
+        font-size: 20px;
+      }
+
+      .continue-button {
+        font-size: 16px;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="result-container">
+      <div class="score">76</div>
+      <div class="score-label">of 100</div>
+      <div class="description">Great! You scored higher than 65% of the people who have taken these tests.</div>
+      <div class="summary-item">
+        <div class="summary-item-label">Reaction</div>
+        <div class="summary-item-value">80 / 100</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-item-label">Memory</div>
+        <div class="summary-item-value">92 / 100</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-item-label">Verbal</div>
+        <div class="summary-item-value">61 / 100</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-item-label">Visual</div>
+        <div class="summary-item-value">72 / 100</div>
+      </div>
+      <a class="continue-button" href="#">Continue</a>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </div>
+</body>
+</html>
